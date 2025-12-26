@@ -8,7 +8,7 @@ I'm not quite sure which one to pick.
 I figured Rust was a good choice as it is quite popular in the Python ecosystem, so I can probably find some use for it.
 I've also dabbled in Rust previously.
 
-So far, I have solved **3/12** of the Advent of Code 2025 puzzles in Rust.
+So far, I have solved **4/12** of the Advent of Code 2025 puzzles in Rust.
 
 Stipulations:
 
