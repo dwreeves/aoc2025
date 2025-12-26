@@ -23,7 +23,7 @@ struct Rotation {
 impl FromStr for Rotation {
     type Err = String;
 
-    fn from_str(s: &str) -> Result<Self, String> {
+    fn from_str(s: &str) -> Result<Self, Self::Err> {
         let direction: char = s.chars().nth(0).unwrap();
         let amount: i32 = s.chars().skip(1).collect::<String>().parse().unwrap();
         Ok(Rotation { direction, amount })
