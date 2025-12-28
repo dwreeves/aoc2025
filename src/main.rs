@@ -2,6 +2,7 @@ mod day01;
 mod day02;
 mod day03;
 mod day04;
+mod day05;
 
 use clap::{Parser};
 
@@ -19,6 +20,8 @@ enum Cli {
     Day3Part2(day03::Command),
     Day4Part1(day04::Command),
     Day4Part2(day04::Command),
+    Day5Part1(day05::Command),
+    Day5Part2(day05::Command),
 }
 
 
@@ -34,5 +37,7 @@ fn main() {
         Cli::Day3Part2(cmd) => { day03::part2(cmd); }
         Cli::Day4Part1(cmd) => { day04::part1(cmd); }
         Cli::Day4Part2(cmd) => { day04::part2(cmd); }
+        Cli::Day5Part1(cmd) => { day05::part1(cmd); }
+        Cli::Day5Part2(cmd) => { day05::part2(cmd); }
     }
 }
