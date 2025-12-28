@@ -72,6 +72,41 @@ pub(crate) fn part1(command: &Command) {
     println!("{}", total);
 }
 
+pub(crate) fn part1_obnoxious(command: &Command) {
+    // I made this deliberately obnoxious.
+    // I think part1() above is a better implementation.
+    // This was just for fun!
+    println!("{}",
+        transpose_matrix_clone(io::BufReader::new(
+            fs::File::open(&command.path).unwrap()
+        ).lines()
+            .map(|s|
+                s.unwrap()
+                    .split(" ")
+                    .filter(|&x| x != "")
+                    .map(str::to_string)
+                    .collect::<Vec<String>>()
+            )
+            .collect::<Vec<Vec<String>>>()).iter()
+            .map(|x|
+                match x.last().unwrap().as_str() {
+                    "*" => {
+                        x[0..x.len() - 1].iter()
+                            .map(|x| x.parse::<i128>().unwrap())
+                            .reduce(|x, y| x * y)
+                            .unwrap_or(0)
+                    },
+                    "+" => {
+                        x[0..x.len() - 1].iter()
+                            .map(|x| x.parse::<i128>().unwrap())
+                            .sum()
+                    },
+                    _ => { panic!("this shouldn't happen"); }
+                }
+            )
+            .sum::<i128>()
+    );
+}
 
 pub(crate) fn part2(command: &Command) {
     let mut total: i128 = 0;

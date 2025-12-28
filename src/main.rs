@@ -24,6 +24,7 @@ enum Cli {
     Day5Part1(day05::Command),
     Day5Part2(day05::Command),
     Day6Part1(day06::Command),
+    Day6Part1Obnoxious(day06::Command),
     Day6Part2(day06::Command),
 }
 
@@ -43,6 +44,7 @@ fn main() {
         Cli::Day5Part1(cmd) => { day05::part1(cmd); }
         Cli::Day5Part2(cmd) => { day05::part2(cmd); }
         Cli::Day6Part1(cmd) => { day06::part1(cmd); }
+        Cli::Day6Part1Obnoxious(cmd) => { day06::part1_obnoxious(cmd); }
         Cli::Day6Part2(cmd) => { day06::part2(cmd); }
     }
 }
