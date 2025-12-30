@@ -16,9 +16,9 @@ Stipulations:
 
 - No vibe-coding, no cheating on solutions algorithmically.
 - Rust docs and StackOverflow are allowed. Ignore Gemini Google search results.
-- Claude can assist with compiler errors only.
+- Claude can assist with compiler errors only or very nuanced things specific to Rust. Every question to AI must be meant with the intent to learn something about Rust and not to take a shortcut.
 - Use minimal 3rd party libs. So far, only Clap and Clippy.
-- No copy + pasting across modules. (Get muscle memory down for typing Rust!) Peeking is fine.
+- No copy + pasting across modules. Looking at another module is perfectly fine, but all repeat code must be re-typed out by hand. Otherwise, no muscle memory is built.
 
 The code here is almost certainly sloppy.
 I'm interested in keeping this as a time capsule where I can one day look back and see my progress.
@@ -31,3 +31,4 @@ I'm interested in keeping this as a time capsule where I can one day look back a
 - **Day 4**: `saturating_sub()`.
 - **Day 5**: I got extremely ambitious for this one. I got tired of just writing basic code and wanted to see how far I could push things. I learned: `by_ref()` for an iterator, `std::cmp::Ordering` + some other traits, and a few more things. I did have to ask Claude for a hint when I tried to use `Vec::binary_search_by` and it pointed me to `Vec::partition_point`. I also had a logical bug that drove me crazy and which I got stuck on that I just couldn't find, and Claude helped out (I was setting `j` to `0` instead of `1`-- oops!).
 - **Day 6**: For the previous 5 problems, I had written fairly _procedural_ code. Today I wanted to experiment with writing much more _functional_ code. Sadly, there is still a for-loop in part 2, but part 1 is entirely for-loop free, and even part 2 is _mostly_ functional. Uses of AI: I ran into a couple type issues I had to pass by Claude relating to types (some things about `str` versus `String`, and trying to slice an iterator); and after-the-fact, I had Claude re-write `transpose_matrix` to be more functional (I'd used a procedural implementation for this). Although having AI rewrite code goes against the spirit of what I am trying to do, I really just wanted to see the functional implementation!
+- **Day 7**: Did this on the Amtrak. I wanted to continue my functional programming streak. I did OK, but still ultimately relied on a mutable variable in an outer scope for part 1. I learned about `Iterator::fold()`, which was exactly what I needed, and I learned about `if` conditions in `match` statements. No Claude.
